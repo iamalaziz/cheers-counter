@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+
+:root {
+  --primary: #6d58ff;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid #2343df; */
+}
+body {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.App {
+  font-family: sans-serif;
+}
+p {
+  text-align: center;
+  margin-top: 3rem;
+  color: #62cdff;
+  font-family: "Dancing Script";
+}
+span {
+  display: block;
+}
+span img {
+  width: 20px;
+  height: 20px;
+  margin-top: 0.5rem;
+  transform: rotate(-30deg);
+  transform-origin: 0 10px;
+  animation: soundOnIcon 1s infinite;
+}
+@keyframes soundOnIcon {
+  0% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+button {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+.count-num {
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.count-num::after {
+  content: "+1";
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  opacity: 0;
+  background: var(--primary);
+  border-radius: 50%;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+}
+button.cheer .count-num::after {
+  animation: count 1s ease;
+}
+
+@keyframes count {
+  15% {
+    opacity: 1;
+    transform: scale(1.15) translateX(50%) translateY(-50%) translateZ(0);
+  }
+  25% {
+    transform: scale(0.95) translateX(50%) translateY(-50%) translateZ(0);
+  }
+  50% {
+    transform: scale(1) translateX(50%) translateY(-50%) translateZ(0);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50%) translateY(-50%) translateY(-70px) translateZ(0);
+  }
+}
+
+.container {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0 1px 4px rgba(#000d58, 0.05), 0 2px 8px rgba(#000d58, 0.1);
+  transition: box-shadow 0.3s;
+  position: relative;
+}
+.container:hover {
+  box-shadow: 0 1px 10px rgba(#000d58, 0.05), 0 2px 14px rgba(#000d58, 0.1);
+  transform: scale(1.02);
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+button.cheer .container:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle, #f97b22 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #f97b22 20%, transparent 30%),
+    radial-gradient(circle, #f97b22 20%, transparent 20%),
+    radial-gradient(circle, #f97b22 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #f97b22 15%, transparent 20%),
+    radial-gradient(circle, #f97b22 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #f97b22 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #f97b22 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #f97b22 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #f97b22 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #f97b22 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #f97b22 20%, transparent 20%),
+    radial-gradient(circle, #f97b22 20%, transparent 20%);
+  background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  animation: leftBubbles 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+@keyframes leftBubbles {
+  0% {
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%,
+      15% 15%, 10% 10%, 18% 18%;
+    background-position: 40% 40%, 45% 40%, 50% 40%, 55% 40%, 60% 36%, 58% 35%,
+      35% 40%, 60% 30%, 42% 38%, 45% 35%, 50% 30%;
+  }
+  45% {
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%,
+      15% 15%, 10% 10%, 18% 18%;
+    background-position: 25% 5%, 36% 10%, 20% 8%, 65% 2%, 70% -2%, 75% 0%,
+      27% 10%, 650% 12%, 30% 7%;
+  }
+  70% {
+    background-position: 30% 40%, 36% 35%, 20% 38%, 65% 32%, 70% 30%, 75% 40%,
+      20% 45%, 650% 39%, 34% 36%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%,
+      0% 0%;
+  }
+  100% {
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%,
+      0% 0%;
+    background-position: 40% 40%, 45% 40%, 50% 40%, 55% 40%, 60% 36%, 58% 35%,
+      35% 40%, 60% 30%, 50% 30%;
+  }
+}
+
+.left {
+  transform: scaleX(-1) translate(11px, 4px) rotate(-10deg) translateZ(0);
+  z-index: 2;
+}
+.right {
+  transform: translate(11px, -4px) rotate(-10deg) translateZ(0);
+}
+button.cheer img.right {
+  animation: cheer-right 1s ease;
+}
+
+button.cheer img.left {
+  animation: cheer-left 1s ease;
+}
+
+@keyframes cheer-left {
+  35% {
+    transform: scaleX(-1) rotate(-16deg) translate(18px, 4px) translateZ(0);
+  }
+  55% {
+    transform: scaleX(-1) rotate(6deg) translate(9px, 4px) translateZ(0);
+  }
+}
+@keyframes cheer-right {
+  35% {
+    transform: scaleX(1) rotate(-16deg) translate(18px, 4px) translateZ(0);
+  }
+  55% {
+    transform: scaleX(1) rotate(6deg) translate(9px, 4px) translateZ(0);
+  }
+}
