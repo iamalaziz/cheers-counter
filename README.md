@@ -1,4 +1,4 @@
-# cheers-counter
+# cheers-counter 🍻
 Created with CodeSandbox
 
 #### <a href="https://cheers-counter.vercel.app/">Demo<a/>
